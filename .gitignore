@@ -1,0 +1,30 @@
+# OpenLane generated data
+runs/
+openlane/runs/
+*.log
+
+# Simulation output
+*.vcd
+*.fst
+*.lxt
+*.lxt2
+
+# Compiled simulation executables
+sim
+a.out
+obj_dir/
+
+# Yosys generated files
+*.netlist.v
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor
+.vscode/
