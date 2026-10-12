@@ -1,0 +1,10 @@
+{
+    "DESIGN_NAME": "spi_top",
+    "VERILOG_FILES": [
+        "dir::../rtl/spi_master.v",
+        "dir::../rtl/spi_slave.v",
+        "dir::../rtl/spi_top.v"
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 20
+}

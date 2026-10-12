@@ -1,30 +1,15 @@
-# OpenLane generated data
-runs/
+# Generated physical-design runs
 openlane/runs/
-*.log
-
-# Simulation output
-*.vcd
-*.fst
-*.lxt
-*.lxt2
-
-# Compiled simulation executables
-sim
-a.out
-obj_dir/
-
-# Yosys generated files
-*.netlist.v
 
 # Temporary files
+*.log
 *.tmp
-*.bak
 *.swp
+*~
 
-# Python
+# Python caches
 __pycache__/
 *.pyc
 
-# Editor
-.vscode/
+# Generated schematic files (keep selected final figures separately)
+*.dot
