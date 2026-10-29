@@ -14,18 +14,21 @@ A parameterized 4-slave SPI master/slave system in Verilog, supporting all four 
 ## Repository layout
 
 ```
-rtl/        spi_master.v, spi_slave.v, spi_top.v
-tb/         self-checking testbenches
-openlane/   OpenLane 2 configuration
-docs/       screenshots and saved metrics
+├── rtl/        
+│   ├── spi_master.v, spi_slave.v, spi_top.v
+├── tb/         
+│   ├── tb_spi_top.v
+├── openlane/   
+│   ├── config.json
+├── docs/ 
+│   ├── floorplan.png, final_odb_heatmap.png, gds_layout.png
+│   ├── architecture
+│   │   ├── spi_master.svg, spi_slave.svg
 ```
-
-(Adjust to match your actual folders.)
 
 ## Verification
 
-- `tb_spi_top.v`: single-mode regression (Mode 0, all 4 slaves)
-- `tb_spi_all_modes.v`: four DUT instances (one per mode), 20 repetitions x 4 modes x 4 slaves = **320 randomized full-duplex transfers, 0 failures** at `CLK_DIV=4`
+- `tb_spi_top.v`: four DUT instances (one per mode), 20 repetitions x 4 modes x 4 slaves = **320 randomized full-duplex transfers, 0 failures** at `CLK_DIV=4`
 - Verilator lint clean
 
 Two bugs were found and fixed through the all-modes testbench:
@@ -80,25 +83,11 @@ Timing was analyzed across all nominal, min and max corners (tt/ss/ff). Setup sl
 
 ## Run history
 
-One variable changes per run.
 
 | Run | Clock | Change | Die area | Setup WS | Hold WS | DRC | LVS |
 |---|---|---|---|---|---|---|---|
 | baseline | 20 ns | initial run | 19,807 µm² | +13.50 ns | +0.11 ns | TODO | TODO |
 
-## How to run
-
-Simulation (Icarus Verilog):
-
-```bash
-iverilog -g2005 -o sim rtl/*.v tb/tb_spi_all_modes.v && vvp sim
-```
-
-ASIC flow (OpenLane 2, inside `nix-shell` in the openlane2 checkout):
-
-```bash
-openlane --run-tag <name> /path/to/config.json
-```
 
 ## Tools
 
