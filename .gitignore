@@ -13,3 +13,6 @@ __pycache__/
 
 # Generated schematic files (keep selected final figures separately)
 *.dot
+obj_dir/
+*.vcd
+runs/
