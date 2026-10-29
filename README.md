@@ -63,17 +63,6 @@ Initial run, clock constraint **20 ns (50 MHz)**.
 
 Timing was analyzed across all nominal, min and max corners (tt/ss/ff). Setup slack is tightest at the slow corner (ss, 100 C, 1.60 V); hold is tightest at the fast corner (ff, -40 C, 1.95 V).
 
-### Sign-off status
-
-| Check | Result |
-|---|---|
-| DRC | TODO |
-| LVS | TODO |
-| Antenna | TODO |
-| Power | TODO |
-| Final instance count / utilization | TODO |
-
-Fill these from `final/metrics.json` of the run.
 
 ### Layout
 
